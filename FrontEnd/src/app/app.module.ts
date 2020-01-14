@@ -1,6 +1,10 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { MatInputModule } from "@angular/material";
+import {
+  MatInputModule,
+  MatCardModule,
+  MatButtonModule
+} from "@angular/material";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -24,6 +28,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     BrowserModule,
     AppRoutingModule,
     MatInputModule,
+    MatCardModule,
+    MatButtonModule,
     MatCheckboxModule,
     BrowserAnimationsModule
   ],
