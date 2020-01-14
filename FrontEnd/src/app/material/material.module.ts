@@ -7,9 +7,13 @@ import {
   MatCardModule,
   MatGridListModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatCheckboxModule,
+  MatDatepickerModule
+  
 } from '@angular/material';
 
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
 @NgModule({
   declarations: [],
@@ -21,7 +25,10 @@ import {
     MatCardModule,
     MatGridListModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatMomentDateModule
   ],
   exports: [
     MatButtonModule,
@@ -30,7 +37,11 @@ import {
     MatCardModule,
     MatGridListModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatMomentDateModule
   ]
 })
+
 export class MaterialModule { }

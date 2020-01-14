@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
@@ -8,6 +9,15 @@ import { CardItemComponent } from './cards/card-list/card-item/card-item.compone
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material/material.module';
 import { FormsModule } from '@angular/forms';
+
+import { AppRoutingModule } from "./app-routing.module";
+
+import { MainComponent } from "./components/main/main.component";
+import { SearchBoxComponent } from "./components/filter/searchbox/searchbox.component";
+import { FilterContainerComponent } from "./components/filter/container/container.component";
+import { TypeCheckBoxesComponent } from "./components/filter/type/type.component";
+import { DatePickerComponent } from "./components/filter/datepicker/datepicker.component";
+
 
 
 @NgModule({
@@ -22,9 +32,19 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+
+    MainComponent,
+    FilterContainerComponent,
+    SearchBoxComponent,
+    TypeCheckBoxesComponent,
+    DatePickerComponent,
+  
+    AppRoutingModule
+
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
