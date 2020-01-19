@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Card } from 'src/app/shared/card.model';
-import { MatGridTile } from '@angular/material'
+
 
 @Component({
   selector: 'app-card-item',
@@ -15,5 +15,5 @@ export class CardItemComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
 }
