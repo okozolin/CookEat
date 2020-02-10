@@ -1,1 +1,6 @@
-<mat-checkbox>Indian</mat-checkbox>
+<section fxLayout="column">
+<mat-checkbox
+  *ngFor="let item of cuisineTypes">
+    {{ item }}
+</mat-checkbox>
+</section>
