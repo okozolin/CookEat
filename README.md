@@ -1,5 +1,5 @@
-# angular-8-jwt-authentication-example
+# node-jwt-authentication-api
 
-Angular 8 - JWT Authentication Example with the Angular CLI
+NodeJS JWT Authentication API
 
-To see a demo and further details go to https://jasonwatmore.com/post/2019/06/22/angular-8-jwt-authentication-example-tutorial
+For documentation and instructions check out http://jasonwatmore.com/post/2018/08/06/nodejs-jwt-authentication-tutorial-with-example-api
