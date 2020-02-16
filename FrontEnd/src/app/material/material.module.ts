@@ -9,7 +9,11 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatCheckboxModule,
-  MatDatepickerModule
+  MatDatepickerModule,
+  MatSidenavModule,
+  MatDialogModule,
+  
+  
   
 } from '@angular/material';
 
@@ -28,7 +32,9 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
     MatInputModule,
     MatCheckboxModule,
     MatDatepickerModule,
-    MatMomentDateModule
+    MatMomentDateModule,
+    MatSidenavModule,
+    MatDialogModule
   ],
   exports: [
     MatButtonModule,
@@ -40,7 +46,9 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
     MatInputModule,
     MatCheckboxModule,
     MatDatepickerModule,
-    MatMomentDateModule
+    MatMomentDateModule,
+    MatSidenavModule,
+    MatDialogModule
   ]
 })
 

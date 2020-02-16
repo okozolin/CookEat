@@ -1,10 +1,12 @@
 
-
-  .cards {
-    margin: 40px auto 0 auto;
+   .cards {
+    margin: 20px;
     flex-wrap: wrap;
-    flex-basis: 30%;
     display: flex;
-    justify-content: stretch;
-  }
+
+  } 
+
+   /* .cards {
+    display: flex;
+  }  */
 
