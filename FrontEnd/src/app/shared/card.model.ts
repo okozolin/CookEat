@@ -5,5 +5,12 @@ export class Card {
         public price: number,
         public rank: number,
         public courseDate: Date,
-        public imagePath: string) { }
+        public imagePath: string,
+        
+        
+        
+        
+        
+        
+        ) { }
 }

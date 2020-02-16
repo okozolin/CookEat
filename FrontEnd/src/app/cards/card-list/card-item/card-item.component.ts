@@ -1,19 +1,23 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Card } from 'src/app/shared/card.model';
-
+import { MatDialog } from '@angular/material';
+import { CardItemDetailsComponent } from '../../card-item-details/card-item-details.component';
 
 @Component({
   selector: 'app-card-item',
   templateUrl: './card-item.component.html',
   styleUrls: ['./card-item.component.css']
 })
-export class CardItemComponent implements OnInit {
 
+export class CardItemComponent implements OnInit {
   @Input() cardItem: Card;
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
+
+  openDialog() {
+    this.dialog.open(CardItemDetailsComponent, { disableClose: false, data: this.cardItem })
+  }
 
   ngOnInit() {
   }
-
 }

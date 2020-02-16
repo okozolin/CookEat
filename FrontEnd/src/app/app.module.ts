@@ -17,6 +17,7 @@ import { MaterialModule } from './material/material.module';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from "./app-routing.module";
+import { CardItemDetailsComponent } from './cards/card-item-details/card-item-details.component';
 
 
 
@@ -30,7 +31,8 @@ import { AppRoutingModule } from "./app-routing.module";
     FilterContainerComponent,
     SearchBoxComponent,
     TypeCheckBoxesComponent,
-    DatePickerComponent
+    DatePickerComponent,
+    CardItemDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,7 @@ import { AppRoutingModule } from "./app-routing.module";
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CardItemDetailsComponent]
 })
 export class AppModule {}

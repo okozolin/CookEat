@@ -1,14 +1,16 @@
 <div class="card">
-    <a href="#">
-        <mat-card class="card"> 
-            <img [src]="cardItem.imagePath">
+    <a (click)="openDialog()">
+        <mat-card>
+            <img mat-card-image [src]="cardItem.imagePath">
             <mat-card-header>
                 <mat-card-title>
                     <span>{{cardItem.courseName}}</span>
-                    <!-- <span>{{cardItem.rank}}</span> -->
-                    <!-- <mat-icon>star</mat-icon> -->
                 </mat-card-title>
-                <mat-card-subtitle>{{cardItem.foodType}}</mat-card-subtitle>
+                <mat-card-subtitle>
+                    {{cardItem.foodType}}
+                    <span >{{cardItem.rank}}</span>
+                    <mat-icon align="end">star</mat-icon>
+                </mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
                 <p>some data</p>
