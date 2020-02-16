@@ -1,0 +1,19 @@
+{
+  "name": "the-board",
+  "version": "0.0.0",
+  "description": "CookEat",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "grunt": "^1.0.4",
+    "pug": "^2.0.4",
+    "underscore": "^1.9.1",
+    "vash": "^0.12.9"
+  },
+  "devDependencies": {
+    "grunt-nodemon": "^0.4.2"
+  }
+}
