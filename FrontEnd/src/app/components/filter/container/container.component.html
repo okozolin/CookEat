@@ -1,4 +1,8 @@
-<mat-card>
+  <form novalidate
+        (ngSubmit)="search()"
+        [formGroup]="filterForm">
+    <mat-card>
+
   <app-searchbox></app-searchbox>
   <div>
     <app-type></app-type>
@@ -7,6 +11,10 @@
     <app-datepicker></app-datepicker>
   </div>
   <mat-card-actions>
-    <button mat-raised-button color="accent">Search</button>
+    <button mat-raised-button
+            type="submit"
+            color="accent">Search</button>
   </mat-card-actions>
-</mat-card>
+    </mat-card>
+
+  </form>
