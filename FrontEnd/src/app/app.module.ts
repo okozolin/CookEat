@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from "./app-routing.module";
 import { CardItemDetailsComponent } from './cards/card-item-details/card-item-details.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { CardItemDetailsComponent } from './cards/card-item-details/card-item-de
     MaterialModule,
     FlexLayoutModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
