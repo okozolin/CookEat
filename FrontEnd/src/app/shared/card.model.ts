@@ -4,13 +4,11 @@ export class Card {
         public location: string,
         public price: number,
         public rank: number,
-        public courseDate: Date,
+        public startDate: Date,
         public imagePath: string,
-        
-        
-        
-        
-        
-        
-        ) { }
+        public duration: string,
+        public tutorName: string,
+        public discription: string
+
+    ) { }
 }
