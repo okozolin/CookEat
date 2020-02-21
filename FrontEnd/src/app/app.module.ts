@@ -7,7 +7,7 @@ import { SearchBoxComponent } from "./components/filter/searchbox/searchbox.comp
 import { FilterContainerComponent } from "./components/filter/container/container.component";
 import { TypeCheckBoxesComponent } from "./components/filter/type/type.component";
 import { DatePickerComponent } from "./components/filter/datepicker/datepicker.component";
-
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardsComponent } from './cards/cards.component';
 import { CardListComponent } from './cards/card-list/card-list.component';
@@ -33,9 +33,11 @@ import { CardItemDetailsComponent } from './cards/card-item-details/card-item-de
     TypeCheckBoxesComponent,
     DatePickerComponent,
     CardItemDetailsComponent
+
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,

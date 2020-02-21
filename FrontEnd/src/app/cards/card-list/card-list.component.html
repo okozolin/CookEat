@@ -1,6 +1,6 @@
 
 <mat-grid-list cols="4" class="cards">
-<mat-grid-tile *ngFor="let cardItem of cards">
+<mat-grid-tile *ngFor="let cardItem of courses">
   <app-card-item 
       [cardItem]="cardItem"
       (selectedCard)="onCardSelected(cardItem)">
