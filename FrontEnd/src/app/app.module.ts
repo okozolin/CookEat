@@ -45,9 +45,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [CardItemDetailsComponent]
 })
-export class AppModule {}
+export class AppModule { }
