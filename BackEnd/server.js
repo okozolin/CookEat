@@ -1,10 +1,11 @@
 var http = require('http');
 var express = require('express');
+const cors = require('cors');
 var app = express();
 var port = process.env.PORT || 1337;
 var controllers = require("./controllers");
-
 //Map the routes
+app.use(cors());
 controllers.init(app);
 
 
@@ -17,6 +18,8 @@ controllers.init(app);
 //Start server
 var server = http.createServer(app);
 server.listen(port);
+
+console.log("Server is running...");
 
 
 
