@@ -22,20 +22,27 @@ export class FilterContainerComponent implements AfterViewInit {
   @ViewChild(DatePickerComponent) childDate;
 
   ngAfterViewInit() {
-    this.searchBoxFromComp = this.childSearchText.message;
+    this.searchBoxFromComp = this.childSearchText.searchBox.value;
     this.typeCheckboxesFromComp = this.childTypeCheckboxesArr.selectedTypesValues;
-    this.dateFromComp = this.childDate.message;
+    this.dateFromComp = this.childDate.datePicker.value;
   }
 
+  formatDate(UTCDate): string {
+    const dd = UTCDate._d.toDateString().split(' ')
+    dd.shift()
+    const formattedDate = dd.join('-');
+    return formattedDate;
+  }
   search() {
     this.searchBoxFromComp = this.childSearchText.searchBox.value;
     this.typeCheckboxesFromComp = this.childTypeCheckboxesArr.selectedTypesValues;
-    this.dateFromComp = this.childDate;
+    this.dateFromComp = this.childDate.datePickerText.value;
 
-    console.log("this.searchBoxFromComp", this.searchBoxFromComp)
-    console.log("this.childTypeCheckboxesArr.selectedTypesValues", this.childTypeCheckboxesArr.selectedTypesValues)
-    console.log("this.typeCheckboxesFromComp", this.typeCheckboxesFromComp)
-    // console.log('pressed search: ' + JSON.stringify(this.filterForm.value));
+    const searchObj = {
+      freeText:   this.searchBoxFromComp,
+      foodTypes:  this.typeCheckboxesFromComp,
+      startDate:  this.formatDate(this.dateFromComp)
+    }
+    console.log("searchObj", searchObj);
   }
-
 }
