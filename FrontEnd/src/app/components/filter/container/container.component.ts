@@ -28,10 +28,11 @@ export class FilterContainerComponent implements AfterViewInit {
   }
 
   search() {
-    this.searchBoxFromComp = this.childSearchText.message;
+    this.searchBoxFromComp = this.childSearchText.searchBox.value;
     this.typeCheckboxesFromComp = this.childTypeCheckboxesArr.selectedTypesValues;
-    this.dateFromComp = this.childDate.message;
+    this.dateFromComp = this.childDate;
 
+    console.log("this.searchBoxFromComp", this.searchBoxFromComp)
     console.log("this.childTypeCheckboxesArr.selectedTypesValues", this.childTypeCheckboxesArr.selectedTypesValues)
     console.log("this.typeCheckboxesFromComp", this.typeCheckboxesFromComp)
     // console.log('pressed search: ' + JSON.stringify(this.filterForm.value));

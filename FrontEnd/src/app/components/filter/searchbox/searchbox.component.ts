@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import {AbstractControl, FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: "app-searchbox",
@@ -6,7 +7,25 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["searchbox.component.css"]
 })
 export class SearchBoxComponent implements OnInit {
-  constructor() {}
+  searchBoxForm: FormGroup;
+  searchBoxText = new FormControl()
+  constructor(private fb: FormBuilder) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.searchBoxForm = this.fb.group({
+      searchBox: this.searchBoxText
+    });
+  }
+
+  // getter for the type control i.e search box of free text
+  get searchBox(): AbstractControl {
+    return this.searchBoxForm.get('searchBox');
+  }
+
+  addFreeTextControl() {
+    let tmp = this.fb.control(this.searchBox);
+    console.log("tmp", tmp)
+    console.log("searchBoxForm", this.searchBoxForm.controls)
+    return tmp;
+  }
 }
