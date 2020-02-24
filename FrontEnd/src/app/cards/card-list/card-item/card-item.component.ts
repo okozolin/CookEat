@@ -12,6 +12,8 @@ import { CardItemDetailsComponent } from '../../card-item-details/card-item-deta
 export class CardItemComponent implements OnInit {
   @Input() cardItem: Card;
 
+  arr_stars : number[] = [];
+
   constructor(private dialog: MatDialog) { }
 
   openDialog() {
@@ -19,5 +21,7 @@ export class CardItemComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.arr_stars  = new Array(Math.round(this.cardItem.rank));
+    console.log( this.arr_stars)
   }
 }
