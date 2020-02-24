@@ -39,20 +39,35 @@
 		};
 	}
 
+	function filterByDate(date) {
+
+		return function (currentElement) {
+
+			//convert date to Date and current element's date to the same than compare
+			var currentDate = new Date(currentElement['startDate']);
+			var filterDate = new Date(date);
+
+			console.log("current date is:", currentDate);
+			console.log("filter date is:", filterDate);
+			console.log("result is:", (currentElement < filterDate));
+
+
+			return (currentElement > filterDate);
+		}
+	}
 
 	//because it is an async action we need to define what to do next
-	data.getCourses = function (nextFunc, limit = null, offset = null, sortBy = null, foodType = null, Date = null, filterFunction = null) {
-
-		//check for null arguments
+	data.getCourses = function (nextFunc, limit = null, offset = null, sortBy = null, foodType = null, date = null, filterFunction = null) {
 
 		var currentData = seedData.initialCourses;
 
 		//filter data by chosen parameters
-		if (foodType != null /*&& Date != null*/) {
-			var currentData = currentData.filter(filterByFood(foodType));
-			console.log("filteredCourses:", currentData);
-			//filter by date and insert into current data
+		if (foodType != null /*&& date != null*/) {
 
+			//filter by all properties, date will be called from the main filter func
+			currentData = currentData.filter(filterByFood(foodType));
+			console.log("filteredCourses:", currentData);
+			//currentData = currentData.filter(filterByDate(date));
 		}
 
 		if (sortBy != null) {

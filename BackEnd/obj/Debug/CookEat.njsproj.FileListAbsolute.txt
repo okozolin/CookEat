@@ -1,0 +1,2 @@
+C:\Projects\CookEat\BackEnd\obj\Debug\CookEat.njsprojAssemblyReference.cache
+C:\Projects\CookEat\BackEnd\bin\Microsoft.NodejsTools.WebRole.dll
