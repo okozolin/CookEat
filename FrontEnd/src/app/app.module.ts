@@ -46,6 +46,7 @@ import { MAT_DATE_LOCALE } from "@angular/material";
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule
+   
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}
@@ -53,4 +54,4 @@ import { MAT_DATE_LOCALE } from "@angular/material";
   bootstrap: [AppComponent],
   entryComponents: [CardItemDetailsComponent]
 })
-export class AppModule {}
+export class AppModule { }

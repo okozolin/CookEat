@@ -15,7 +15,7 @@ export class CardItemComponent implements OnInit {
   constructor(private dialog: MatDialog) { }
 
   openDialog() {
-    this.dialog.open(CardItemDetailsComponent, { disableClose: false, data: this.cardItem })
+    this.dialog.open(CardItemDetailsComponent, { disableClose: false, width: '50%', data: this.cardItem })
   }
 
   ngOnInit() {

@@ -8,7 +8,7 @@ export class Card {
         public imagePath: string,
         public duration: string,
         public tutorName: string,
-        public discription: string
+        public description: string
 
     ) { }
 }
