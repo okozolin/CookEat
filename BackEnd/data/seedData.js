@@ -8,7 +8,7 @@
 			location: "Tel Aviv",
 			price: 400,
 			rank: 5,
-			imagePath: "https://i.udemycdn.com/course/240x135/1974482_9e10_3.jpg",
+			imagePath: "https://image.shutterstock.com/image-photo/assorted-asian-dinner-vietnamese-food-600w-1068468656.jpg",
 			duration: 4,
 			description: ""
 		}, {
@@ -19,8 +19,8 @@
 			location: "Jerusalem",
 			price: 350,
 			rank: 4.9,
-			imagePath: "https://i.udemycdn.com/course/240x135/1423592_5992.jpg",
-			duration: 4,
+			imagePath: "https://image.shutterstock.com/image-photo/burritos-wraps-beef-vegetables-on-600w-1088296088.jpg",
+			duration: 6,
 			description: ""
 		}, {
 			courseName: "course3",
@@ -30,8 +30,8 @@
 			location: "Tel Aviv",
 			price: 370,
 			rank: 3.9,
-			imagePath:"https://i.udemycdn.com/course/240x135/2612464_8c36_3.jpg",
-			duration: 4,
+			imagePath:"https://image.shutterstock.com/image-photo/assorted-chinese-food-set-noodles-600w-446808100.jpg",
+			duration: 5,
 			description: ""
 		}, {
 			courseName: "course4",
@@ -41,8 +41,8 @@
 			location: "Petah Tikva",
 			price: 410,
 			rank: 3.5,
-			imagePath: "https://i.udemycdn.com/course/240x135/1563558_03fb_2.jpg",
-			duration: 4,
+			imagePath: "https://image.shutterstock.com/image-photo/healthy-food-clean-eating-selection-600w-722718097.jpg",
+			duration: 7,
 			description: ""
 		}, {
 			courseName: "course5",
@@ -52,8 +52,8 @@
 			location: "Ramat Gan",
 			price: 320,
 			rank: 4.5,
-			imagePath:"https://i.udemycdn.com/course/240x135/1788646_4be5.jpg",
-			duration: 4,
+			imagePath:"https://image.shutterstock.com/image-photo/indian-food-curry-butter-chicken-600w-1304901667.jpg",
+			duration: 3,
 			description: ""
 		}, {
 			courseName: "course7",
@@ -63,7 +63,7 @@
 			location: "Ramat Gan",
 			price: 390,
 			rank: 4.2,
-			imagePath:"https://i.udemycdn.com/course/240x135/1006418_23ec_6.jpg",
+			imagePath:"https://image.shutterstock.com/image-photo/middle-eastern-arabic-dishes-assorted-600w-563091901.jpg",
 			duration: 4,
 			description: ""
 		}, {
@@ -74,8 +74,8 @@
 			location: "Beer Sheva",
 			price: 370,
 			rank: 4.8,
-			imagePath:"https://i.udemycdn.com/course/240x135/465334_4dc1_8.jpg",
-			duration: 4,
+			imagePath:"https://image.shutterstock.com/image-photo/colorful-aromatic-spices-fresh-herbs-600w-1191256522.jpg",
+			duration: 3,
 			description: ""
 		}, {
 			courseName: "course8",
@@ -85,8 +85,8 @@
 			location: "Jerusalem",
 			price: 400,
 			rank: 5,
-			imagePath:"https://i.udemycdn.com/course/240x135/1188824_8def.jpg",
-			duration: 4,
+			imagePath:"https://image.shutterstock.com/image-photo/family-dinner-celebration-red-wine-600w-1520471591.jpg",
+			duration: 7,
 			description: ""
 		}, {
 			courseName: "course0",
@@ -96,7 +96,7 @@
 			location: "Hulon",
 			price: 300,
 			rank: 4.6,
-			imagePath: "https://i.udemycdn.com/course/240x135/1751546_58f9_2.jpg",
+			imagePath: "https://image.shutterstock.com/image-photo/wine-cheese-served-friendly-party-600w-1081684592.jpg",
 			duration: 4,
 			description: ""
 
@@ -108,8 +108,8 @@
 			location: "Tel Aviv",
 			price: 350,
 			rank: 4.1,
-			imagePath: "https://i.udemycdn.com/course/240x135/626076_2ade_3.jpg",
-			duration: 4,
+			imagePath: "https://image.shutterstock.com/image-photo/greek-food-background-meze-gyros-600w-646209769.jpg",
+			duration: 5,
 			description: ""
 		}]
 		;
