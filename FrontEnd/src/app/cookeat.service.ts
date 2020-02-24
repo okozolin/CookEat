@@ -12,7 +12,7 @@ export class CookeatService {
   url: string = 'http://localhost:1337/api/courses?';
 
 
-  GetCourses(limit = 8, offset = 0, sortBy = 'owner'){
+  GetCourses(limit = 20, offset = 0, sortBy = 'owner'){
 
     return this.http.get<any[]>(this.url + `limit=${limit}&offset=${offset}&sortBy=${sortBy}`);//limit=8&offset=0&sortBy=owner");
 

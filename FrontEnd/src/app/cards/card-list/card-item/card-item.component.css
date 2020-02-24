@@ -25,13 +25,4 @@
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
 }
-  /* @supports (display: grid) {
-    .container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
 
-    .container > .mycard {
-      flex: 1;
-    }
-  } */

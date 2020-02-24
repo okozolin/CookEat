@@ -11,7 +11,7 @@ export class CardItemDetailsComponent implements OnInit {
 
   @Input() card : Card;
 
-  stars : any[] = [1,2,3]
+  arr_stars : number[] = [];
 
   constructor(
     @Inject(MAT_DIALOG_DATA) private data: Card
@@ -19,6 +19,7 @@ export class CardItemDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.card = this.data;
+    this.arr_stars  = new Array(Math.round(this.card.rank));
   }
 
  
