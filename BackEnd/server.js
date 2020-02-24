@@ -4,6 +4,7 @@ const cors = require('cors');
 var app = express();
 var port = process.env.PORT || 1337;
 var controllers = require("./controllers");
+
 //Map the routes
 app.use(cors());
 controllers.init(app);

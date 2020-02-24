@@ -1,88 +1,93 @@
 ﻿(function (data) {
 	var seedData = require("./seedData");
 
-	
-	data.getCoursesCategories = function(next) {
+
+	data.getCoursesCategories = function (next) {
 		next(null, seedData.initialCourse);
-
-		//seed data will be filtered according to query string parameters
-		//init all arguments to null, if not null-->filter
-
 	};
 
-	//why const?
-	//check if property exists
-	//order comes from parsing the property and checking fo the - sign
-	//why course1[sortBy].hasOwnProperty() returns false?
-
-	//need to create a func within a func!!!!!!!!!!!!! not running!
 	function compareCourses(order = 1, sortBy) {
-		console.log("outer arguments are: ", arguments);
 
-		return function innerSort(a, b)
-		{
-			console.log("arguments are: ", arguments);
+		return function innerSort(a, b) {
+			//console.log("arguments are: ", arguments);
 
-			console.log("typeof(a[soetBy]) is", typeof (a[sortBy]));
+			if (!a.hasOwnProperty(sortBy) || !b.hasOwnProperty(sortBy)) {
+				console.log("one of the courses has no property. course1: ", a.hasOwnProperty(sortBy), "course2: ", b.hasOwnProperty(sortBy));
+				return 0;
+			};
 
-			//if (!course1[sortBy].hasOwnProperty() || !course2[sortBy].hasOwnProperty()) {
-			//	console.log("course1 val: ", course1[sortBy].hasOwnProperty(), "course2 val: ", course2[sortBy].hasOwnProperty());
-			//	return 0;
-			//};
+			var course1 = typeof (a[sortBy]) == "string" ? a[sortBy].toLowerCase() : a[sortBy];
+			var course2 = typeof (b[sortBy]) == "string" ? b[sortBy].toLowerCase() : b[sortBy];
 
+			var comparison = 1;
 
-			var course1Val = typeof (a[sortBy]) == "string" ? a[sortBy].toLowerCase() : a[sortBy];
-			var course2Val = typeof (b[sortBy]) == "string" ? b[sortBy].toLowerCase() : b[sortBy];
-			console.log("course1Val is", course1Val, "course2Val is", course2Val);
-			console.log("----------course1 is", a["owner"]);
-
-			var comparison = 0;
-
-			if (course1Val > course2Val) {
+			if (course1 > course2) {
 				comparison = 1;
 			} else {
 				comparison = -1;
 			}
 
-			console.log("-----------------------");
-
 			return comparison * order;
-
 		}
-		};
+	};
 
+	//when filter will be generic the property will be sent
+	function filterByFood(filterBy) {
+
+		return function (currentElement) {
+			return (currentElement['foodType'] === filterBy);
+		};
+	}
+
+	function filterByDate(date) {
+
+		return function (currentElement) {
+
+			//convert date to Date and current element's date to the same than compare
+			var currentDate = new Date(currentElement['startDate']);
+			var filterDate = new Date(date);
+
+			console.log("current date is:", currentDate);
+			console.log("filter date is:", filterDate);
+			console.log("result is:", (currentElement < filterDate));
+
+
+			return (currentElement > filterDate);
+		}
+	}
 
 	//because it is an async action we need to define what to do next
-	data.getCourses = function (nextFunc, limit = null, offset = null, sortBy = null, filterFunction = null) {
-
-		//check for null arguments
-		//var filteredData = filterFunction(seedData.initialCourses);
-		//next(null, filteredData.slice(offset, limit).sort(sortFunc));
-		
+	data.getCourses = function (nextFunc, limit = null, offset = null, sortBy = null, foodType = null, date = null, filterFunction = null) {
 
 		var currentData = seedData.initialCourses;
-		
 
-		if (sortBy != null) {
-			//compareCourses(currentData[0], currentData[1],  -1, sortBy);
-			currentData.sort(compareCourses(-1, sortBy));
+		//filter data by chosen parameters
+		if (foodType != null /*&& date != null*/) {
 
-			//call sort on the array and insert to a new sorted array?
-			//parse the minus to get direction
-			//sort the array 
-			//if property is string do to lower
-			//check if the property exists in the new objects
-			//inset to sortedData or filteredData- check if sort func sorts the data and returns
-			//it in a different array
-			//compare(a,b,asc){return asc * (a-b)}
-			//when querystring is empty an empty array is returned
+			//filter by all properties, date will be called from the main filter func
+			currentData = currentData.filter(filterByFood(foodType));
+			console.log("filteredCourses:", currentData);
+			//currentData = currentData.filter(filterByDate(date));
 		}
 
-		nextFunc(null, seedData.initialCourses.slice(offset, limit));  
+		if (sortBy != null) {
 
+			var orderBy = 1;
+			var desc = sortBy.substring(0, 1);
+			if (desc === '-') {
+				orderBy = -1;
+				sortBy = sortBy.split('-')[1];
+			}
 
-		//nextFunc(null, currentData);
+			currentData.sort(compareCourses(orderBy, sortBy));
+		}
 
+		var recordsAmount = parseInt(offset) + parseInt(limit);
+		if (recordsAmount > currentData.length) {
+			recordsAmount = currentData.length;
+		}
+
+		nextFunc(null, currentData.slice(offset, recordsAmount));
 	};
 
 })(module.exports);

@@ -12,6 +12,10 @@
 				var limit = req.query["limit"];
 				var offset = req.query["offset"];
 				var sortBy = req.query["sortBy"];
+				var foodType = req.query["foodType"];
+				var startDate = req.query["date"];
+
+				console.log("query:", req.query);
 
 				data.getCourses(
 
@@ -19,10 +23,10 @@
 						if (err) {
 							res.send(400, err);
 						} else {
-							
+
 							res.send(courses);
 						}
-					}, limit, offset, sortBy);
+					}, limit, offset, sortBy, foodType, startDate);
 			});
 	};
 })(module.exports);
