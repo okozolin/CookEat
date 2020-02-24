@@ -9,6 +9,7 @@ import {FormArray, FormBuilder, FormGroup} from "@angular/forms";
 })
 export class TypeCheckBoxesComponent implements OnInit {
   typeForm: FormGroup;
+  selectedTypesValues = [];
 
   cuisineTypes = [
     {name: 'Indian',  selected: false, id: 1},
@@ -29,7 +30,9 @@ export class TypeCheckBoxesComponent implements OnInit {
     });
   }
 
+  // getter for the type control i.e checkboxes
   get types(): FormArray {
+    // return this.typeForm.get('types') as FormArray;
     return this.typeForm.get('types') as FormArray;
   }
 
@@ -39,5 +42,18 @@ export class TypeCheckBoxesComponent implements OnInit {
       return this.fb.control(type.selected);
     });
     return this.fb.array(arr);
+  }
+
+  getSelectedTypesValues() {
+    // re-initialize array value
+    this.selectedTypesValues = [];
+
+    this.types.controls.forEach((control, i) => {
+      if (control.value) {
+        this.selectedTypesValues.push(this.cuisineTypes[i].name);
+      }
+    });
+
+    console.log("getSelectedTypesValues", this.selectedTypesValues);
   }
 }

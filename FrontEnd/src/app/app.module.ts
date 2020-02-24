@@ -20,6 +20,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { CardItemDetailsComponent } from './cards/card-item-details/card-item-details.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { MAT_DATE_LOCALE } from "@angular/material";
 
 
 @NgModule({
@@ -46,7 +47,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}
+  ],
   bootstrap: [AppComponent],
   entryComponents: [CardItemDetailsComponent]
 })

@@ -1,5 +1,11 @@
-<mat-form-field>
-  <input matInput [matDatepicker]="picker" placeholder="Choose a start date" />
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>
+<form [formGroup]="datePickerForm">
+  <mat-form-field>
+    <input matInput
+           formControlName="datePicker"
+           (change) = 'addDatePickerControl()'
+           [matDatepicker]="picker"
+           placeholder="Choose a start date" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</form>
