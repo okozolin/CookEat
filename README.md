@@ -5,10 +5,6 @@ A search engine for cooking classes all over the world, including ratings and re
 The website is currently in beta version and based on mock data.<br/>
 This site is made as part of the "30 hours" program by "Baot" community, that groups experienced developers together to study new technologies by creating a side project together.
 "Baot" community is the largest Israeli women experienced developers community.
-## Future goals
-* Extend the functionality of the website - add login option, rating option, map view..
-* Add courses data by crawling websites and manually.
-* Decide a business model for the website, such as offer promotions with a pay.
 
 ### Contributers
 * Shiri Haim - Team lead. System Architect and Frontend Guild Lead.
@@ -16,9 +12,21 @@ This site is made as part of the "30 hours" program by "Baot" community, that gr
 * Tamar Admoni - Backend developement.
 * Hofit Yoresh - Frontend developement/.NET Developer
 
+### Our challenges and what we've learned
+* Building project from scratch
+* Design lifesycle - UX design, Code design
+* Collaboration using relevant tools - Git, Github, Trello, Hangouts, Google Docs, Face to face meetings
+* MEAN Stack - MongoDB, Express, Angular 8/9, NodeJS
+* Advanced development topics: Observables, Reactive Forms, Dynamic Forms, Routes etc.
+
+### Future goals
+* Extend the functionality of the website - add login option, rating option, map view..
+* Add courses data by crawling websites and manually.
+* Decide a business model for the website, such as offer promotions with a pay.
+
 <hr>
 
-### Getting Started
+# Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 ### Prerequisites
 What things you need to install the software and how to install them
