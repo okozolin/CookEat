@@ -43,16 +43,10 @@
 
 		return function (currentElement) {
 
-			//convert date to Date and current element's date to the same than compare
-			var currentDate = new Date(currentElement['startDate']);
-			var filterDate = new Date(date);
+			var filterDate = Date.parse(date);
+			var currentDate =  Date.parse(currentElement['startDate']);
 
-			console.log("current date is:", currentDate);
-			console.log("filter date is:", filterDate);
-			console.log("result is:", (currentElement < filterDate));
-
-
-			return (currentElement > filterDate);
+			return (currentDate >= filterDate);
 		}
 	}
 
@@ -62,12 +56,11 @@
 		var currentData = seedData.initialCourses;
 
 		//filter data by chosen parameters
-		if (foodType != null /*&& date != null*/) {
+		if (foodType != null && date != null) {
 
 			//filter by all properties, date will be called from the main filter func
 			currentData = currentData.filter(filterByFood(foodType));
-			console.log("filteredCourses:", currentData);
-			//currentData = currentData.filter(filterByDate(date));
+			currentData = currentData.filter(filterByDate(date));
 		}
 
 		if (sortBy != null) {

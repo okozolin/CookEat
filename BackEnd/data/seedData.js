@@ -47,7 +47,7 @@
 		}, {
 			courseName: "course5",
 			tutorName: "owner5",
-			startDate: "2020-04-11T10:20:30Z",
+			startDate: "2020-04-11T00:00:00Z",
 			foodType: "Indian",
 			location: "Ramat Gan",
 			price: 320,
@@ -91,7 +91,7 @@
 		}, {
 			courseName: "course0",
 			tutorName: "owner0",
-			startDate: "2020-04-11T10:20:30Z",
+			startDate: "2020-04-11T00:00:00Z",
 			foodType: "French",
 			location: "Hulon",
 			price: 300,
