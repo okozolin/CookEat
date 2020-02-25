@@ -1,9 +1,10 @@
 <section fxLayout="column">
   <form [formGroup]="typeForm">
     <div formArrayName="types">
-    <div *ngFor="let item of types.controls;index as i">
+    <div *ngFor="let control of types.controls;index as i">
     <mat-checkbox
-      [formControlName]="i">
+      (change) = 'getSelectedTypesValues()'
+      [formControl]="control">
         {{ cuisineTypes[i].name }}
     </mat-checkbox>
   </div>

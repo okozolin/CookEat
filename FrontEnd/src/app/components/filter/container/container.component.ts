@@ -1,30 +1,48 @@
-import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup} from "@angular/forms";
+import {AfterViewInit, Component, ViewChild} from "@angular/core";
+import { SearchBoxComponent } from '../searchbox/searchbox.component'
+import { TypeCheckBoxesComponent } from '../type/type.component'
+import { DatePickerComponent } from "../datepicker/datepicker.component";
 
 @Component({
   selector: "app-filtercontainer",
   templateUrl: "container.component.html",
   styleUrls: ["container.component.css"]
 })
-export class FilterContainerComponent implements OnInit {
-  filterForm: FormGroup;
+export class FilterContainerComponent implements AfterViewInit {
 
-  constructor(private fb: FormBuilder) {}
+  constructor() {}
 
-  ngOnInit() {
-    console.log("this.fb", this.fb)
-    this.filterForm = this.fb.group({
-      searchBox: [''],
-      foodType: [''],
-      datePicker: ['']
-    })
+  searchBoxFromComp: string;
+  @ViewChild(SearchBoxComponent) childSearchText;
+
+  typeCheckboxesFromComp: [] ;
+  @ViewChild(TypeCheckBoxesComponent) childTypeCheckboxesArr;
+
+  dateFromComp: string;
+  @ViewChild(DatePickerComponent) childDate;
+
+  ngAfterViewInit() {
+    this.searchBoxFromComp = this.childSearchText.searchBox.value;
+    this.typeCheckboxesFromComp = this.childTypeCheckboxesArr.selectedTypesValues;
+    this.dateFromComp = this.childDate.datePicker.value;
   }
 
+  formatDate(UTCDate): string {
+    const dd = UTCDate._d.toDateString().split(' ')
+    dd.shift()
+    const formattedDate = dd.join('-');
+    return formattedDate;
+  }
   search() {
-    console.log("this.fb", this.fb)
+    this.searchBoxFromComp = this.childSearchText.searchBox.value;
+    this.typeCheckboxesFromComp = this.childTypeCheckboxesArr.selectedTypesValues;
+    this.dateFromComp = this.childDate.datePickerText.value;
 
-    console.log('this.customerForm', this.filterForm);
-    console.log('pressed search: ' + JSON.stringify(this.filterForm.value));
+    const searchObj = {
+      freeText:   this.searchBoxFromComp,
+      foodTypes:  this.typeCheckboxesFromComp,
+      startDate:  this.formatDate(this.dateFromComp)
+    }
+    console.log("searchObj", searchObj);
   }
-
 }

@@ -1,9 +1,13 @@
-<h2 mat-dialog-title>{{card.courseName}}</h2>
+<h2 mat-dialog-title>Healthy Vegan Gourmet Class</h2>
 <mat-dialog-content>
-Rate this course now...
+
+    <span>{{card.duration}} weeks &#8226; {{card.foodType}} &#8226; <mat-icon style="font-size: 15px;"
+            *ngFor="let s of arr_stars">star</mat-icon>
+    </span>
+    <p>
+       {{card.description}}
+    </p>
 </mat-dialog-content>
 <mat-dialog-actions>
-    <button mat-button mat-dialog-close>Cancel</button>
-    <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
-    <button mat-button [mat-dialog-close]="true">Rate!</button>
+    <button mat-button [mat-dialog-close]="true">Enroll Now!</button>
 </mat-dialog-actions>

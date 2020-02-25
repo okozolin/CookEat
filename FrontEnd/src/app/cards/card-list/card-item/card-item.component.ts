@@ -12,12 +12,16 @@ import { CardItemDetailsComponent } from '../../card-item-details/card-item-deta
 export class CardItemComponent implements OnInit {
   @Input() cardItem: Card;
 
+  arr_stars : number[] = [];
+
   constructor(private dialog: MatDialog) { }
 
   openDialog() {
-    this.dialog.open(CardItemDetailsComponent, { disableClose: false, data: this.cardItem })
+    this.dialog.open(CardItemDetailsComponent, { disableClose: false, width: '50%', data: this.cardItem })
   }
 
   ngOnInit() {
+    this.arr_stars  = new Array(Math.round(this.cardItem.rank));
+    console.log( this.arr_stars)
   }
 }

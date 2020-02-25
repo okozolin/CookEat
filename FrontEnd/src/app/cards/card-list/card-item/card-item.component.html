@@ -1,20 +1,19 @@
 <div class="card">
-    <a (click)="openDialog()">
-        <mat-card>
-            <img mat-card-image [src]="cardItem.imagePath">
-            <mat-card-header>
-                <mat-card-title>
-                    <span>{{cardItem.courseName}}</span>
-                </mat-card-title>
-                <mat-card-subtitle>
-                    {{cardItem.foodType}}
-                    <span >{{cardItem.rank}}</span>
-                    <mat-icon>star</mat-icon>
-                </mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-                <p>some data</p>
-            </mat-card-content>
-        </mat-card>
-    </a>
+    <mat-card class="example-card" (click)="openDialog()">
+        <img mat-card-image [src]="cardItem.imagePath">
+        <mat-card-title>
+            {{cardItem.courseName}}
+        </mat-card-title>
+        <mat-card-subtitle>
+            <p> {{cardItem.foodType}}</p>
+            <p style="font-size: medium;color: goldenrod;">
+                {{cardItem.rank}}
+                <mat-icon style="font-size: small;" *ngFor="let s of arr_stars">star</mat-icon>
+            </p>
+        </mat-card-subtitle>
+        <mat-card-content>
+            <span style="font-size: large; font-weight: bold;">{{cardItem.price}}</span>
+            <mat-icon style="font-size: large; font-weight: bold;">attach_money</mat-icon>
+        </mat-card-content>
+    </mat-card>
 </div>
