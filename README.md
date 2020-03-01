@@ -9,12 +9,12 @@ This site is made as part of the "30 hours" program by "Baot" community, that gr
 ### Contributers
 * Shiri Haim - Team lead. System Architect and Frontend Guild Lead.
 * Orit Kozolin Nachum - Frontend/Full Stack Developer.
-* Tamar Admoni - Backend developement.
-* Hofit Yoresh - Frontend developement/.NET Developer
+* Tamar Admoni - Backend development.
+* Hofit Yoresh - Frontend development/.NET Developer
 
 ### Our challenges and what we've learned
 * Building project from scratch
-* Design lifesycle - UX design, Code design
+* Design lifecycle - UX design, Code design
 * Collaboration using relevant tools - Git, Github, Trello, Hangouts, Google Docs, Face to face meetings
 * MEAN Stack - MongoDB, Express, Angular 8/9, NodeJS
 * Advanced development topics: Observables, Reactive Forms, Dynamic Forms, Routes etc.
