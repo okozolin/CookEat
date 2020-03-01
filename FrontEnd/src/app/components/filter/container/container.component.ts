@@ -13,6 +13,8 @@ export class FilterContainerComponent implements AfterViewInit {
 
   constructor(private service : CookeatService) { }
 
+  courses;
+
   searchBoxFromComp: string;
   @ViewChild(SearchBoxComponent) childSearchText;
 
@@ -31,7 +33,7 @@ export class FilterContainerComponent implements AfterViewInit {
   formatFoodType(foodTypeArr): string {
     if (foodTypeArr.length !== 0) {
       const tmpFtArr = [...foodTypeArr];
-      return tmpFtArr.map( item => "foodType=" + item).join('&')
+      return tmpFtArr.map( item => "foodType[]=" + item).join('&')
     } else {
       return ''; }
   }
@@ -60,6 +62,6 @@ export class FilterContainerComponent implements AfterViewInit {
       foodTypes:  this.typeCheckboxesFromComp,
       startDate:  this.dateFromComp
     }
-    this.service.GetCourses(20, 0, 'owner', this.searchString(searchObj))
+    this.service.getCourses(20, 0, 'owner', this.searchString(searchObj));
   }
 }
