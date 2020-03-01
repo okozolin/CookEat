@@ -1,6 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, OnDestroy} from '@angular/core';
 import { Card } from 'src/app/shared/card.model';
 import { CookeatService } from '../../cookeat.service';
+import { Subscription } from "rxjs";
 
 
 @Component({
@@ -8,11 +9,12 @@ import { CookeatService } from '../../cookeat.service';
   templateUrl: './card-list.component.html',
   styleUrls: ['./card-list.component.css']
 })
-export class CardListComponent implements OnInit {
+export class CardListComponent implements OnInit, OnDestroy {
 
   @Output() cardWasSelected = new EventEmitter<Card>();
-  
-  courses : Card[] = [];
+
+  courses;
+  private coursesSubs: Subscription;
 
   constructor(private service : CookeatService) { }
 
@@ -21,7 +23,10 @@ export class CardListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.service.GetCourses().subscribe(res => this.courses = res)
+    this.coursesSubs = this.service.getCourses().subscribe(res => this.courses = res);
   }
 
+  ngOnDestroy(): void {
+    this.coursesSubs.unsubscribe();
+  }
 }
