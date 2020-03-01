@@ -50,18 +50,40 @@
 		}
 	}
 
+	//can make a hash table with property name and a pointer to func
+	function  filterCourses(foodTypes, date, text, courses) {
+
+		var filteredCourses = courses;
+
+		if (date != null) {
+
+			filteredCourses = filteredCourses.filter(filterByDate(date));
+		}
+		if (foodTypes != null) {
+
+			var filterByAllFood = new Array();
+
+			for (var i = 0; i < foodTypes.length; ++i) {
+
+				currentFood = filteredCourses.filter(filterByFood(foodTypes[i]));
+				filterByAllFood = filterByAllFood.concat(currentFood);
+			}
+
+			filteredCourses = filterByAllFood;
+		}
+		if (text != null) {
+			//call filter by text
+		}
+
+		return filteredCourses; 
+	}
+
 	//because it is an async action we need to define what to do next
 	data.getCourses = function (nextFunc, limit = null, offset = null, sortBy = null, foodType = null, date = null, filterFunction = null) {
 
 		var currentData = seedData.initialCourses;
 
-		//filter data by chosen parameters
-		if (foodType != null && date != null) {
-
-			//filter by all properties, date will be called from the main filter func
-			currentData = currentData.filter(filterByFood(foodType));
-			currentData = currentData.filter(filterByDate(date));
-		}
+		currentData = filterCourses(foodType, date, null, currentData);
 
 		if (sortBy != null) {
 

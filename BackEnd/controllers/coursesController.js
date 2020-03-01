@@ -9,11 +9,11 @@
 
 				res.set("Content-Type", "application/json");
 
-				var limit = req.query["limit"];
-				var offset = req.query["offset"];
-				var sortBy = req.query["sortBy"];
-				var foodType = req.query["foodType"];
-				var startDate = req.query["date"];
+				var limit = req.query.limit;
+				var offset = req.query.offset;
+				var sortBy = req.query.sortBy;
+				var foodType = req.query.foodType;
+				var startDate = req.query.date;
 
 				console.log("query:", req.query);
 
