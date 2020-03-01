@@ -9,8 +9,8 @@ This site is made as part of the "30 hours" program by "Baot" community, that gr
 ### Contributers
 * Shiri Haim - Team lead. System Architect and Frontend Guild Lead.
 * Orit Kozolin Nachum - Frontend/Full Stack Developer.
-* Tamar Admoni - Backend developement.
-* Hofit Yoresh - Frontend developement/.NET Developer
+* Tamar Admoni - Backend development.
+* Hofit Yoresh - Frontend development/.NET Developer
 
 ### Our challenges and what we've learned
 * Building project from scratch
