@@ -23,9 +23,6 @@ export class DatePickerComponent implements OnInit {
   }
 
   addDatePickerControl() {
-    let tmp = this.fb.control(this.datePicker);
-    console.log("tmp datePickerForm", tmp)
-    console.log("datePickerForm", this.datePickerForm.controls)
-    return tmp;
+    return this.fb.control(this.datePicker);
   }
 }

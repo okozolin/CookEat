@@ -1,7 +1,7 @@
 <div class="main-container">
 
     <mat-toolbar color="primary" class="main-toolbar">
-        <button mat-icon-button (click)="snav.toggle()">
+        <button mat-icon-button (click)='sideNavToggle()'>
             <mat-icon>search</mat-icon>
         </button>
         <h1 class="main-app-name">CookEat</h1>
@@ -9,7 +9,7 @@
 
     <mat-sidenav-container class="main-sidenav-container">
         <mat-sidenav class="main-sidenav"  #snav mode="over" fixedTopGap="56">
-            <app-filtercontainer></app-filtercontainer>
+            <app-filtercontainer (onSearchClick)='sideNavToggle()'></app-filtercontainer>
         </mat-sidenav>
 
         <mat-sidenav-content>

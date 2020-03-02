@@ -12,14 +12,14 @@ export class TypeCheckBoxesComponent implements OnInit {
   selectedTypesValues = [];
 
   cuisineTypes = [
-    {name: 'Indian',  selected: false, id: 1},
+    {name: 'French',  selected: false, id: 1},
     {name:'Chinese',  selected: false, id: 2},
     {name: 'Italian', selected: false, id: 3},
-    {name: 'Japanese',selected: false, id: 4},
+    {name: 'Indian',selected: false, id: 4},
     {name: 'Jewish',  selected: false, id: 5},
-    {name: 'American',selected: false, id: 6},
-    {name: 'French',  selected: false, id: 7},
-    {name: 'Israeli', selected: false, id: 8},
+    {name: 'Vietnamese',selected: false, id: 6},
+    {name: 'Mexican',  selected: false, id: 7},
+    {name: 'Mediterranean', selected: false, id: 8},
   ];
   cuisineTypesChecked: IFoodTypeStatus[] = [];
   constructor(private fb: FormBuilder) {}
@@ -53,7 +53,5 @@ export class TypeCheckBoxesComponent implements OnInit {
         this.selectedTypesValues.push(this.cuisineTypes[i].name);
       }
     });
-
-    console.log("getSelectedTypesValues", this.selectedTypesValues);
   }
 }

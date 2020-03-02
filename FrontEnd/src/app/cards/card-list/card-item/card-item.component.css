@@ -2,28 +2,47 @@
 
 .card {
   padding: 10px;
+  margin-bottom: 30px;
   box-sizing: border-box;
 }
 
 .example-card {
-    background-color: transparent;
-    box-sizing: border-box;
     width: 300px;
     height: 350px;
-    transition: none;
-    box-shadow: none;
 }
 
 .mat-card-title {
-  font-size: 15px;
+  font-size: 16px;
   height: 30px;
 }
 
-.mat-card-image:first-child {
-  margin-top: -16px;
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
-  border-bottom-left-radius: inherit;
-  border-bottom-right-radius: inherit;
+#card-info {
+  padding: 0 20px;
 }
+/*.mat-icon {*/
+  /*vertical-align: middle;*/
+/*}*/
+
+#rank {
+  /*vertical-align: middle;*/
+  padding-left: 10px;
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
+}
+
+#price {
+  font-size: 30px;
+  font-weight: bold;
+  color: #B12704
+}
+/*.mat-card-image:first-child {*/
+  /*margin-top: -16px;*/
+  /*border-top-left-radius: inherit;*/
+  /*border-top-right-radius: inherit;*/
+  /*border-bottom-left-radius: inherit;*/
+  /*border-bottom-right-radius: inherit;*/
+/*}*/
 

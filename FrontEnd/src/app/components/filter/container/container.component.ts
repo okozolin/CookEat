@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ViewChild} from "@angular/core";
+import {AfterViewInit, Component, EventEmitter, Output, ViewChild} from "@angular/core";
 import { SearchBoxComponent } from '../searchbox/searchbox.component'
 import { TypeCheckBoxesComponent } from '../type/type.component'
 import { DatePickerComponent } from "../datepicker/datepicker.component";
@@ -10,10 +10,9 @@ import {CookeatService} from "../../../cookeat.service";
   styleUrls: ["container.component.css"]
 })
 export class FilterContainerComponent implements AfterViewInit {
+  @Output() onSearchClick = new EventEmitter()
 
   constructor(private service : CookeatService) { }
-
-  courses;
 
   searchBoxFromComp: string;
   @ViewChild(SearchBoxComponent) childSearchText;
@@ -23,6 +22,9 @@ export class FilterContainerComponent implements AfterViewInit {
 
   dateFromComp: string;
   @ViewChild(DatePickerComponent) childDate;
+
+
+  @ViewChild('searchButton') searchClicked: boolean;
 
   ngAfterViewInit() {
     this.searchBoxFromComp = this.childSearchText.searchBox.value;
@@ -51,10 +53,13 @@ export class FilterContainerComponent implements AfterViewInit {
     return this.formatFoodType(searchObj.foodTypes) + '&' + this.formatDate(searchObj.startDate)
   }
 
-  search() {
+  search(e: any) {
     this.searchBoxFromComp = this.childSearchText.searchBox.value;
     this.typeCheckboxesFromComp = this.childTypeCheckboxesArr.selectedTypesValues;
     this.dateFromComp = this.childDate.datePickerText.value;
+    this.searchClicked = true;
+    this.onSearchClick.emit(e);
+
 
     // const searchString = 'foodType=Chinese&date=2020-2-12'
     const searchObj = {

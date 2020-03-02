@@ -23,9 +23,6 @@ export class SearchBoxComponent implements OnInit {
   }
 
   addFreeTextControl() {
-    let tmp = this.fb.control(this.searchBox);
-    console.log("tmp", tmp)
-    console.log("searchBoxForm", this.searchBoxForm.controls)
-    return tmp;
+    return this.fb.control(this.searchBox);
   }
 }

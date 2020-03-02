@@ -22,6 +22,5 @@ export class CardItemComponent implements OnInit {
 
   ngOnInit() {
     this.arr_stars  = new Array(Math.round(this.cardItem.rank));
-    console.log( this.arr_stars)
   }
 }
