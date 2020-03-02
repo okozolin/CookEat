@@ -1,5 +1,5 @@
   <form novalidate
-        (ngSubmit)="search()">
+        (ngSubmit)="search($event)">
     <mat-card>
 
   <app-searchbox></app-searchbox>
@@ -12,6 +12,7 @@
   <mat-card-actions>
     <button mat-raised-button
             type="submit"
+            #searchButton
             color="accent">Search</button>
   </mat-card-actions>
     </mat-card>
