@@ -44,7 +44,7 @@ When working in development mode, you need to perform each of the underlying ins
 
 ## Run
 
-`$ npm start`
+See instructions in the readme.md file in each section
 
 ### Built With
 
